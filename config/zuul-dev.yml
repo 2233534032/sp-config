@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: zuul
+    
+server:
+  port: 3001
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+#默认这个配置都是默认,需要修改可以改参数
+#zuul:
+ # routes:
+  #  item-service: /item-service/**
+   # user-service: /user-service/**
+    #order-service: /order-service/**
+
+#开启zuul的重试
+zuul:
+  retryable: true
